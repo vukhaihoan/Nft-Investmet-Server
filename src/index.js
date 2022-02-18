@@ -1,8 +1,8 @@
+require("dotenv").config();
 const express = require("express");
 var cors = require("cors");
 const app = express();
 const mongoose = require("mongoose");
-require("dotenv").config();
 const httpServer = require("http").createServer(app);
 var port = process.env.PORT || 8000;
 const options = {
@@ -39,3 +39,5 @@ io.on("connection", onConnection);
 httpServer.listen(port, () => {
   console.log(`listening on ${port}`);
 });
+
+require("./models/test");
